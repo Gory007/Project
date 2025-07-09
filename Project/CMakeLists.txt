@@ -10,11 +10,13 @@ set(SOURCES
     src/main.cpp
     src/MainWindow.cpp
     src/Dictionary.cpp
+    src/AddWordsWindow.cpp
 )
 
 set(HEADERS
     include/MainWindow.h
     include/Dictionary.h
+    include/AddWordsWindow.h
 )
 
 include_directories(${PROJECT_SOURCE_DIR}/include)

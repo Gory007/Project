@@ -85,6 +85,15 @@ build CMakeFiles/VocabularyTrainer.dir/src/Dictionary.cpp.obj: CXX_COMPILER__Voc
   OBJECT_DIR = CMakeFiles\VocabularyTrainer.dir
   OBJECT_FILE_DIR = CMakeFiles\VocabularyTrainer.dir\src
 
+build CMakeFiles/VocabularyTrainer.dir/src/AddWordsWindow.cpp.obj: CXX_COMPILER__VocabularyTrainer_unscanned_Debug C$:/Project/src/AddWordsWindow.cpp || cmake_object_order_depends_target_VocabularyTrainer
+  CONFIG = Debug
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
+  DEP_FILE = CMakeFiles\VocabularyTrainer.dir\src\AddWordsWindow.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -IC:/Project/build/VocabularyTrainer_autogen/include -IC:/Project/include -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
+  OBJECT_DIR = CMakeFiles\VocabularyTrainer.dir
+  OBJECT_FILE_DIR = CMakeFiles\VocabularyTrainer.dir\src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target VocabularyTrainer
@@ -93,7 +102,7 @@ build CMakeFiles/VocabularyTrainer.dir/src/Dictionary.cpp.obj: CXX_COMPILER__Voc
 #############################################
 # Link the executable VocabularyTrainer.exe
 
-build VocabularyTrainer.exe: CXX_EXECUTABLE_LINKER__VocabularyTrainer_Debug CMakeFiles/VocabularyTrainer.dir/VocabularyTrainer_autogen/mocs_compilation.cpp.obj CMakeFiles/VocabularyTrainer.dir/src/main.cpp.obj CMakeFiles/VocabularyTrainer.dir/src/MainWindow.cpp.obj CMakeFiles/VocabularyTrainer.dir/src/Dictionary.cpp.obj | C$:/msys64/mingw64/lib/libQt6Widgets.dll.a C$:/msys64/mingw64/lib/libQt6Gui.dll.a C$:/msys64/mingw64/lib/libQt6Core.dll.a || VocabularyTrainer_autogen VocabularyTrainer_autogen_timestamp_deps
+build VocabularyTrainer.exe: CXX_EXECUTABLE_LINKER__VocabularyTrainer_Debug CMakeFiles/VocabularyTrainer.dir/VocabularyTrainer_autogen/mocs_compilation.cpp.obj CMakeFiles/VocabularyTrainer.dir/src/main.cpp.obj CMakeFiles/VocabularyTrainer.dir/src/MainWindow.cpp.obj CMakeFiles/VocabularyTrainer.dir/src/Dictionary.cpp.obj CMakeFiles/VocabularyTrainer.dir/src/AddWordsWindow.cpp.obj | C$:/msys64/mingw64/lib/libQt6Widgets.dll.a C$:/msys64/mingw64/lib/libQt6Gui.dll.a C$:/msys64/mingw64/lib/libQt6Core.dll.a || VocabularyTrainer_autogen VocabularyTrainer_autogen_timestamp_deps
   CONFIG = Debug
   FLAGS = -g
   LINK_LIBRARIES = C:/msys64/mingw64/lib/libQt6Widgets.dll.a  C:/msys64/mingw64/lib/libQt6Gui.dll.a  C:/msys64/mingw64/lib/libQt6Core.dll.a  -lmpr  -luserenv  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

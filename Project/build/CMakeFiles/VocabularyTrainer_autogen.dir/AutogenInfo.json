@@ -344,6 +344,12 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Project/include/AddWordsWindow.h",
+			"Mu",
+			"6YEA5652QU/moc_AddWordsWindow.cpp",
+			null
+		],
+		[
 			"C:/Project/include/Dictionary.h",
 			"Mu",
 			"6YEA5652QU/moc_Dictionary.cpp",
@@ -429,6 +435,7 @@
 	"SETTINGS_FILE" : "C:/Project/build/CMakeFiles/VocabularyTrainer_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "C:/Project/src/AddWordsWindow.cpp", "Mu", null ],
 		[ "C:/Project/src/Dictionary.cpp", "Mu", null ],
 		[ "C:/Project/src/MainWindow.cpp", "Mu", null ],
 		[ "C:/Project/src/main.cpp", "Mu", null ]

@@ -1,4 +1,5 @@
 #include "MainWindow.h"
+#include "AddWordsWindow.h"
 #include <QVBoxLayout>
 #include <QMessageBox>
 #include <QApplication>
@@ -33,7 +34,9 @@ void MainWindow::setupUI() {
 }
 
 void MainWindow::onAddWordsClicked() {
-    QMessageBox::information(this, "Информация", "Раздел 'Добавление слов' будет реализован");
+    Dictionary dict("C:/Project/resources/dictionary.txt");  // Путь к файлу
+    AddWordsWindow addWindow(dict, this);
+    addWindow.exec();
 }
 
 void MainWindow::onEditWordsClicked() {

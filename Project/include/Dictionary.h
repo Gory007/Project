@@ -1,7 +1,9 @@
 #pragma once
 #include <vector>
 #include <string>
-#include <utility> // для std::pair
+#include <utility>
+#include <fstream>
+#include <stdexcept>  // для исключений
 
 class Dictionary {
 public:
@@ -9,9 +11,7 @@ public:
     
     void addWord(const std::string& unknown, const std::string& translation);
     void saveToFile();
-    
-    // Для последующих этапов
-    std::vector<std::pair<std::string, std::string>>& getWords();
+    const std::vector<std::pair<std::string, std::string>>& getWords() const;
     
 private:
     std::vector<std::pair<std::string, std::string>> words;
