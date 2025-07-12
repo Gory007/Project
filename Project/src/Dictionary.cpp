@@ -40,3 +40,19 @@ void Dictionary::saveToFile() {
 const std::vector<std::pair<std::string, std::string>>& Dictionary::getWords() const {
     return words;
 }
+
+void Dictionary::editWord(int index, const std::string& newUnknown, const std::string& newTranslation) {
+    if (index < 0 || index >= words.size()) {
+        throw std::out_of_range("Неверный индекс слова");
+    }
+    words[index] = {newUnknown, newTranslation};
+    saveToFile();
+}
+
+void Dictionary::removeWord(int index) {
+    if (index < 0 || index >= words.size()) {
+        throw std::out_of_range("Неверный индекс слова");
+    }
+    words.erase(words.begin() + index);
+    saveToFile();
+}
