@@ -12,6 +12,7 @@ set(SOURCES
     src/Dictionary.cpp
     src/AddWordsWindow.cpp
     src/EditWordsWindow.cpp
+    src/TrainingWindow.cpp
 )
 
 set(HEADERS
@@ -19,6 +20,7 @@ set(HEADERS
     include/Dictionary.h
     include/AddWordsWindow.h
     include/EditWordsWindow.h
+    include/TrainingWindow.h
 )
 
 include_directories(${PROJECT_SOURCE_DIR}/include)

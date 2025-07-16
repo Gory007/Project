@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include <QApplication>
 #include "EditWordsWindow.h"
+#include "TrainingWindow.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     setWindowTitle("Vocabulary Trainer");
@@ -47,5 +48,7 @@ void MainWindow::onEditWordsClicked() {
 }
 
 void MainWindow::onTrainingClicked() {
-    QMessageBox::information(this, "Информация", "Раздел 'Тренировка' будет реализован");
+    Dictionary dict("C:/Project/resources/dictionary.txt");
+    TrainingWindow trainingWindow(dict, this);
+    trainingWindow.exec();
 }

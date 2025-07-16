@@ -1,9 +1,15 @@
 #pragma once
 #include <vector>
+#include <map>
 #include <string>
 #include <utility>
 #include <fstream>
-#include <stdexcept>  // для исключений
+#include <stdexcept>
+
+struct WordStats {
+    int correct = 0;
+    int incorrect = 0;
+};
 
 class Dictionary {
 public:
@@ -15,10 +21,18 @@ public:
 
     void editWord(int index, const std::string& newUnknown, const std::string& newTranslation);
     void removeWord(int index);
+
+    void markCorrect(int index);
+    void markIncorrect(int index);
+    int getWordWeight(int index) const;
+
+    int getRandomWordIndex() const;
     
 private:
     std::vector<std::pair<std::string, std::string>> words;
     std::string filePath;
+
+    std::map<int, WordStats> stats;
     
     void loadFromFile();
 };
