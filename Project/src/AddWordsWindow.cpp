@@ -35,13 +35,22 @@ void AddWordsWindow::setupUI() {
 
 void AddWordsWindow::onConfirmClicked() {
     try {
+        QString unknown = unknownInput->text().trimmed();
+        QString translation = translationInput->text().trimmed();
+        
+        if (unknown.isEmpty() || translation.isEmpty()) {
+            throw std::invalid_argument("Заполните оба поля");
+        }
+        
         dictionary.addWord(
-            unknownInput->text().toStdString(),
-            translationInput->text().toStdString()
+            unknown.toStdString(),
+            translation.toStdString()
         );
+        
         unknownInput->clear();
         translationInput->clear();
         QMessageBox::information(this, "Успех", "Слова добавлены в словарь!");
+        
     } catch (const std::exception& e) {
         QMessageBox::warning(this, "Ошибка", e.what());
     }

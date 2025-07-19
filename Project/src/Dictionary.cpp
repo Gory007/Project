@@ -1,6 +1,8 @@
 #include "Dictionary.h"
 #include <algorithm>
 #include <random>
+#include <regex>
+#include <QRegularExpression>
 
 Dictionary::Dictionary(const std::string& filePath) : filePath(filePath) {
     loadFromFile();
@@ -23,6 +25,13 @@ void Dictionary::addWord(const std::string& unknown, const std::string& translat
     if (unknown.empty() || translation.empty()) {
         throw std::invalid_argument("Оба поля должны быть заполнены");
     }
+    
+    if (!isValidWord(unknown) || !isValidWord(translation)) {
+        throw std::invalid_argument(
+            "Можно использовать только буквы (русские/английские), пробелы и дефисы"
+        );
+    }
+    
     words.emplace_back(unknown, translation);
     saveToFile();
 }
@@ -71,10 +80,16 @@ void Dictionary::markIncorrect(int index) {
 int Dictionary::getWordWeight(int index) const {
     if (stats.count(index)) {
         const auto& s = stats.at(index);
-        // Чем больше ошибок, тем выше вес (слово показывается чаще)
         return s.incorrect * 2 + 1;
     }
-    return 1;  // Вес по умолчанию
+    return 1;
+}
+
+bool Dictionary::isValidWord(const std::string& word) const {
+    QString qword = QString::fromStdString(word);
+    QRegularExpression regex("^[\\p{L} \\-_]+$");  // \p{L} - любая буква Unicode
+    
+    return regex.match(qword).hasMatch();
 }
 
 int Dictionary::getRandomWordIndex() const {
@@ -82,7 +97,6 @@ int Dictionary::getRandomWordIndex() const {
         throw std::runtime_error("Словарь пуст");
     }
 
-    // Создаем "взвешенный" список индексов
     std::vector<int> weightedIndices;
     for (int i = 0; i < words.size(); ++i) {
         int weight = getWordWeight(i);
@@ -91,7 +105,6 @@ int Dictionary::getRandomWordIndex() const {
         }
     }
 
-    // Случайный выбор
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<> distr(0, weightedIndices.size() - 1);

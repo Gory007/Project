@@ -28,7 +28,6 @@ void MainWindow::setupUI() {
     
     setCentralWidget(centralWidget);
     
-    // Подключаем сигналы
     connect(addWordsButton, &QPushButton::clicked, this, &MainWindow::onAddWordsClicked);
     connect(editWordsButton, &QPushButton::clicked, this, &MainWindow::onEditWordsClicked);
     connect(trainingButton, &QPushButton::clicked, this, &MainWindow::onTrainingClicked);
@@ -36,7 +35,7 @@ void MainWindow::setupUI() {
 }
 
 void MainWindow::onAddWordsClicked() {
-    Dictionary dict("C:/Project/resources/dictionary.txt");  // Путь к файлу
+    Dictionary dict("C:/Project/resources/dictionary.txt");
     AddWordsWindow addWindow(dict, this);
     addWindow.exec();
 }

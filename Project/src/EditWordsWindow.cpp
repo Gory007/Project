@@ -13,14 +13,12 @@ EditWordsWindow::EditWordsWindow(Dictionary& dictionary, QWidget* parent)
 void EditWordsWindow::setupUI() {
     QVBoxLayout* layout = new QVBoxLayout(this);
 
-    // Настройка таблицы
     table = new QTableWidget(this);
     table->setColumnCount(2);
     table->setHorizontalHeaderLabels({"Слово на аглийском", "Перевод слова"});
     table->horizontalHeader()->setStretchLastSection(true);
     table->setEditTriggers(QAbstractItemView::DoubleClicked);
 
-    // Кнопки
     confirmButton = new QPushButton("Подтвердить", this);
     removeButton = new QPushButton("Удалить", this);
     doneButton = new QPushButton("Готово", this);
@@ -30,10 +28,8 @@ void EditWordsWindow::setupUI() {
     layout->addWidget(removeButton);
     layout->addWidget(doneButton);
 
-    // Загрузка данных
     loadWordsIntoTable();
 
-    // Подключение сигналов
     connect(confirmButton, &QPushButton::clicked, this, &EditWordsWindow::onConfirmClicked);
     connect(removeButton, &QPushButton::clicked, this, &EditWordsWindow::onRemoveClicked);
     connect(doneButton, &QPushButton::clicked, this, &EditWordsWindow::onDoneClicked);

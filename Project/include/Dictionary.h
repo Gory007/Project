@@ -26,6 +26,8 @@ public:
     void markIncorrect(int index);
     int getWordWeight(int index) const;
 
+    bool isValidWord(const std::string& word) const;
+
     int getRandomWordIndex() const;
     
 private:
