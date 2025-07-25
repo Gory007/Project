@@ -35,19 +35,19 @@ void MainWindow::setupUI() {
 }
 
 void MainWindow::onAddWordsClicked() {
-    Dictionary dict("C:/Project/resources/dictionary.txt");
+    Dictionary dict("resources/dictionary.txt");
     AddWordsWindow addWindow(dict, this);
     addWindow.exec();
 }
 
 void MainWindow::onEditWordsClicked() {
-    Dictionary dict("C:/Project/resources/dictionary.txt");
+    Dictionary dict("resources/dictionary.txt");
     EditWordsWindow editWindow(dict, this);
     editWindow.exec();
 }
 
 void MainWindow::onTrainingClicked() {
-    Dictionary dict("C:/Project/resources/dictionary.txt");
+    Dictionary dict("resources/dictionary.txt");
     TrainingWindow trainingWindow(dict, this);
     trainingWindow.exec();
 }

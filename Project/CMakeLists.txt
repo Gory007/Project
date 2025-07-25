@@ -24,6 +24,7 @@ set(HEADERS
 )
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
+file(COPY resources DESTINATION ${CMAKE_BINARY_DIR})
 
 add_executable(VocabularyTrainer ${SOURCES} ${HEADERS})
 
