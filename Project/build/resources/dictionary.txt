@@ -46,4 +46,3 @@ Woman Женщина
 Girl Девочка
 Man Мужчина
 Yellow Жёлтый
-Line Линия

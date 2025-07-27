@@ -28,7 +28,7 @@ void Dictionary::addWord(const std::string& unknown, const std::string& translat
     
     if (!isValidWord(unknown) || !isValidWord(translation)) {
         throw std::invalid_argument(
-            "Можно использовать только буквы (русские/английские), пробелы и дефисы"
+            "Можно использовать только буквы (русские/английские), дефисы и нижнее подчёркивание."
         );
     }
     
