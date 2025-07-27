@@ -35,7 +35,7 @@
 ### Инструкция по сборке
 
 ```bash
-git clone https://github.com/yourusername/vocabulary-trainer.git
+git clone https://github.com/Gory007/Project/.git
 cd vocabulary-trainer
 mkdir build && cd build
 cmake ..
